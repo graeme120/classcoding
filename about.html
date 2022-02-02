@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="about.js"></script>
+
+    <title>
+      GRAEME MOUNSEY 
+    </title>
+
+    <style>
+
+    @font-face { font-family: BentonB; src: url('BentonSans Bold.otf'); }
+    @font-face { font-family: BentonL; src: url('BentonSans Light.otf'); }
+    @font-face { font-family: BentonM; src: url('BentonSans Medium.otf'); }
+
+      body {
+        font-size: 48px;
+        position: relative;
+        background: linear-gradient(0deg, #003eff, #008cff, #7cfffa, #74ff92, #84ff20, #f3ff4d, #ffe300, #ffe300, #f3ff4d, #84ff20, #74ff92, #7cfffa, #008cff, #003eff);
+        background-size: 10000px 10000px;
+        -webkit-animation: AnimationName 200s ease infinite;
+        -moz-animation: AnimationName 200s ease infinite;
+        animation: AnimationName 200s ease infinite;
+        overflow: hidden;
+      }
+
+      #bodie {
+
+        height: 10000px;
+        width: 100%;
+      }
+
+      .title {
+      font-size: 9vh;
+      font-family: BentonB;
+      color: #ffffff;
+      text-decoration : none;
+      top: 6vh;
+      left: 48vh;
+      position: fixed;
+      margin: auto;
+      }
+
+      #subtitle {
+      font-size: 28px;
+      font-family: Arial;
+      color: #000000;
+      top: 17vh;
+      max-width: 100%;
+      left: 37%;
+      position: relative;
+      }
+
+      #title:hover {
+      color: #ffffff;
+      }
+
+      #film1:hover {
+      color: #ffffff;
+      }
+
+      #film2:hover {
+      color: #ffffff;
+      }
+
+      #film3:hover {
+      color: #ffffff;
+      }
+
+      #film4:hover {
+      color: #ffffff;
+      }
+
+      @keyframes AnimationName {
+          0%{background-position:50% 0%}
+          50%{background-position:51% 100%}
+          100%{background-position:50% 0%}
+      }
+
+
+      .movietitle {
+
+      font-family: Helvetica;
+      font-size: 130%;
+      font-style: italic;
+      right: 5%;
+      top: 32%;
+      position: fixed;
+
+      }
+
+      .description {
+
+
+      font-family: Helvetica;
+      font-size: 62%;
+      font-style: italic;
+      right: 2.5%;
+      top: 48%;
+      font-kerning: 10;
+      position: fixed;
+      max-width: 30%;
+      max-height: 60%;
+
+      }
+
+
+      .about {
+
+      font-size: 7vh;
+      width: 56vw;
+      font-family: BentonM;
+      left: 7vh;
+      top: 7vh;
+      position: fixed;
+
+      }
+
+      .link {
+      color: #000000;
+      }
+
+      .link:hover {
+      color: #ffffff;
+      }
+
+      .profile {
+      height: 64vh;
+      position: fixed;
+      transform: rotate(3deg);
+      right: 8vw;
+      top: 8vh;
+
+
+      }
+
+      #tape1 {
+
+      height: 20vh;
+      position: fixed;
+      top: 1vh;
+      right: 47vh;
+      transform: rotate(10deg);
+      }
+
+      #tape2 {
+
+      height: 21vh;
+      position: fixed;
+      top: 63vh;
+      right: 10vh;
+      opacity: 100%;
+      transform: rotate(290deg);
+      }
+
+      #clr {
+
+      font-family: BentonM;
+      font-size: 5vh;
+      bottom: 12vh;
+      position: fixed;
+      right: 11.5vw;
+      }
+
+      #can:hover {
+
+
+      }
+
+      #clr:hover {
+
+      cursor: pointer;
+      }
+
+      .color:hover {
+
+      cursor: pointer;
+      }
+
+        </style>
+        <link rel="shortcut icon" href="favicon.ico"></link>
+
+        <html>
+            <script type="text/javascript">
+            var canvas, ctx, flag = false,
+                prevX = 0,
+                currX = 0,
+                prevY = 0,
+                currY = 0,
+                dot_flag = false;
+
+            var x = "black",
+                y = 4;
+
+            function init() {
+                canvas = document.getElementById('can');
+                ctx = canvas.getContext("2d");
+                w = canvas.width;
+                h = canvas.height;
+
+                canvas.addEventListener("mousemove", function (e) {
+                    findxy('move', e)
+                }, false);
+                canvas.addEventListener("mousedown", function (e) {
+                    findxy('down', e)
+                }, false);
+                canvas.addEventListener("mouseup", function (e) {
+                    findxy('up', e)
+                }, false);
+                canvas.addEventListener("mouseout", function (e) {
+                    findxy('out', e)
+                }, false);
+            }
+
+            function color(obj) {
+                switch (obj.id) {
+                    case "green":
+                        x = "green";
+                        break;
+                    case "blue":
+                        x = "blue";
+                        break;
+                    case "red":
+                        x = "red";
+                        break;
+                    case "yellow":
+                        x = "yellow";
+                        break;
+                    case "orange":
+                        x = "orange";
+                        break;
+                    case "black":
+                        x = "black";
+                        break;
+                    case "white":
+                        x = "white";
+                        break;
+                }
+                if (x == "white") y = 2;
+                else y = 2;
+
+            }
+
+            function draw() {
+                ctx.beginPath();
+                ctx.moveTo(prevX, prevY);
+                ctx.lineTo(currX, currY);
+                ctx.strokeStyle = x;
+                ctx.lineWidth = y;
+                ctx.stroke();
+                ctx.closePath();
+            }
+
+            function erase() {
+                var m = confirm();
+                if (m) {
+                    ctx.clearRect(0, 0, w, h);
+                    document.getElementById("canvasimg").style.display = "none";
+                }
+            }
+
+            function save() {
+                document.getElementById("canvasimg").style.border = "2px solid";
+                var dataURL = canvas.toDataURL();
+                document.getElementById("canvasimg").src = dataURL;
+                document.getElementById("canvasimg").style.display = "inline";
+            }
+
+            function findxy(res, e) {
+                if (res == 'down') {
+                    prevX = currX;
+                    prevY = currY;
+                    currX = e.clientX - canvas.offsetLeft;
+                    currY = e.clientY - canvas.offsetTop;
+
+                    flag = true;
+                    dot_flag = true;
+                    if (dot_flag) {
+                        ctx.beginPath();
+                        ctx.fillStyle = x;
+                        ctx.fillRect(currX, currY, 2, 2);
+                        ctx.closePath();
+                        dot_flag = false;
+                    }
+                }
+                if (res == 'up' || res == "out") {
+                    flag = false;
+                }
+                if (res == 'move') {
+                    if (flag) {
+                        prevX = currX;
+                        prevY = currY;
+                        currX = e.clientX - canvas.offsetLeft;
+                        currY = e.clientY - canvas.offsetTop;
+                        draw();
+                    }
+                }
+            }
+            </script>
+            <body onload="init()">
+                <canvas id="can" width="377" height="502" style="height: 63.7vh; width: 47.5vh;position:absolute;top:7vh;right:7.4vw;transform:rotate(3deg);border:2px solid;z-index:3; cursor: url('paintbrush.ico');"></canvas>
+                <div class="color" style="position:fixed;bottom: 9vh;right:23vw;width:4.5vh;height:4.5vh;background:yellow;z-index:4;border: 2px solid black;border-radius: 50%;" id="yellow" onclick="color(this)"></div>
+                <div class="color" style="position:fixed;bottom: 9vh;right:27vw;width:4.5vh;height:4.5vh;background:blue;z-index:4;border: 2px solid black;border-radius: 50%;" id="blue" onclick="color(this)"></div>
+                <div class="color" style="position:fixed;bottom: 9vh;right:31vw;width:4.5vh;height:4.5vh;background:red;z-index:4;border: 2px solid black;border-radius: 50%;" id="red" onclick="color(this)"></div>
+                <div class="color" style="position:fixed;bottom: 16vh;right:29vw;width:4.5vh;height:4.5vh;background:black;z-index:4;border: 2px solid black;border-radius: 50%;" id="black" onclick="color(this)"></div>
+                <div class="color" style="position:fixed;bottom: 16vh;right:25vw;width:4.5vh;height:4.5vh;background:white;z-index:4;border: 2px solid black; border-radius: 50%;" id="white" onclick="color(this)"></div>
+                <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
+                <div type="button" value="clear" id="clr" size="23" onclick="erase()">CLEAR</div>
+
+<!-- <div>  <a href="home.html"> <span class="title"><u>GRAEME MOUNSEY</u><span> </a>  </div> -->
+
+<div class="about"> <a class="link" href ="index.html">GRAEME MOUNSEY</a> is a designer/editor from Toronto, Canada. <br></br>
+
+He is currently a sophomore at Parsons School of Design, majoring in Communication Design. <br></br>
+He prefers <a class="link" href ="mailto:moung091@newschool.edu">e-mail</a> for business inquiries, but has an <a class="link" href="https://www.instagram.com/graemeswork/?hl=en">Instagram</a> as well. </div>
+
+<img class="profile" src="graeme.png"></img>
+<img id="tape1" src="tape1.png"></img>
+<img id="tape2" src="tape2.png"></img>
+
+
+
+
+
+
+
+      </body>
+  </html>
