@@ -1,0 +1,182 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria's Diary</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="java.js"></script>
+
+<style>
+
+body {
+        font-size: 48px;
+        position: relative;
+        background-image: url("cute_tile.jpg");
+        background-repeat: repeat;
+        overflow: hidden;
+      }
+
+      @keyframes AnimationName {
+          0%{background-position:50% 0%}
+          50%{background-position:51% 100%}
+          100%{background-position:50% 0%}
+      }
+
+#center {
+
+    width: 50%;
+    position: fixed;
+    height: 65%;
+    background: #FFF0F3;
+    z-index: -2;
+    border: 8px solid #FF6D8C;
+    left: 25vw;
+    bottom: 14vh;
+
+}
+
+.title {
+
+    font-size: 6.5vw;
+    font-family: cursive;
+    color: #000000;
+    -webkit-text-stroke-width: 0.1px;
+    /* //-webkit-text-stroke-color: #FF6D8C; */
+    text-align: center;
+    position: fixed;
+    top: -9vh;
+    left: 9vw;
+    z-index: -1;
+
+}
+
+.subtitle {
+
+font-size: 2.8vw;
+font-family: cursive;
+color: #000000;
+-webkit-text-stroke-width: 0.1px;
+/* //-webkit-text-stroke-color: #FF6D8C; */
+text-align: center;
+position: fixed;
+bottom: 1vh;
+left: 36vw;
+z-index: 3;
+
+}
+
+.arrow-down {
+  width: 0px; 
+  height: 0; 
+  border-left: 25vw solid transparent;
+  border-right: 25vw solid transparent;
+  z-index: -1;
+  border-top: 25vw solid #FFD9E1;
+  position: fixed;
+  left: 25.5vw;
+}
+
+.container {
+
+width: 50%;
+height: 30%;
+left: 6vw;
+z-index: 4;
+
+}
+
+#link:hover {
+
+    color: #FFF0F3;
+}
+
+#link:visited {
+
+    color: #000000;
+}
+
+.button {
+
+bottom: 35vh;
+left: 46.3vw;
+position: fixed;
+font-family: cursive;
+font-size: 1vw;
+z-index: 5;
+width: 8.2vw;
+height: 6vh;
+background-color:transparent;
+stroke: transparent;
+
+
+}
+
+.catch {
+
+width: 87%;
+position: fixed;
+height: 15%;
+background: #FFF0F3;
+left: 6.5vw;
+z-index: 7vw;
+border: 4px solid #FF6D8C;
+
+}
+
+#seal {
+
+width: 13vw;
+position: fixed;
+bottom: 25vh;
+left: 44vw;
+}
+
+</style>
+</head>
+<body>
+    <main>
+    <div class="catch"> 
+    <h1 class="title"> Maria Alvarez-Montero's Diary</h1>
+    </div>
+    <div id="center"> 
+        <div class=arrow-down></div> 
+       
+        
+
+        
+
+    </div>
+    <img id="seal" src="heart.png"></img>
+    <SCRIPT>
+        function passWord() {
+        var testV = 1;
+        var pass1 = prompt('Please Enter Your Password',' ');
+        while (testV < 3) {
+        if (!pass1)
+        history.go(-1);
+        if (pass1.toLowerCase() == "the sacrifice is always arriving") {
+        alert('Correct!');
+        window.open('diary.html');
+        break;
+        }
+        testV+=1;
+        var pass1 =
+        prompt('Access Denied - Password Incorrect, Please Try Again.','Password');
+        }
+        if (pass1.toLowerCase()!="password" & testV ==3)
+        history.go(-1);
+        return " ";
+        }
+        </SCRIPT>
+        <CENTER>
+        <FORM>
+        <input class="button" type="button" value="Enter Password" onClick="passWord()">
+        </FORM>
+        </CENTER>
+
+    <h2 class="subtitle"> Follow me on <a id="link" href="https://www.instagram.com/maria_al1992/">Instagram</a> :) </h2>
+    </main>
+</body>
+</html>

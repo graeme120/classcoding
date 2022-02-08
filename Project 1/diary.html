@@ -1,0 +1,288 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria's Diary</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="java.js"></script>
+
+<style>
+
+body {
+        font-size: 48px;
+        position: relative;
+        background-image: url("cute_tile.jpg");
+        background-repeat: repeat;
+        overflow: hidden;
+      }
+
+      @keyframes AnimationName {
+          0%{background-position:50% 0%}
+          50%{background-position:51% 100%}
+          100%{background-position:50% 0%}
+      }
+
+#center {
+
+    width: 50%;
+    position: fixed;
+    height: 65%;
+    background: #FFF0F3;
+    z-index: -2;
+    border: 8px dashed #FF6D8C;
+    left: 25vw;
+    bottom: 14vh;
+
+}
+
+.title {
+
+    font-size: 6.5vw;
+    font-family: cursive;
+    color: #000000;
+    -webkit-text-stroke-width: 0.1px;
+    /* //-webkit-text-stroke-color: #FF6D8C; */
+    text-align: center;
+    position: fixed;
+    top: -8vh;
+    left: 9vw;
+    z-index: -1;
+
+}
+
+.subtitle {
+
+font-size: 36px;
+font-family: cursive;
+color: #ff2853;
+-webkit-text-stroke-width: 0.1px;
+/* //-webkit-text-stroke-color: #FF6D8C; */
+text-align: center;
+position: fixed;
+bottom: 2vh;
+left: 37vw;
+z-index: 3;
+
+}
+
+.arrow-down {
+  width: 0px; 
+  height: 0; 
+  border-left: 25vw solid transparent;
+  border-right: 25vw solid transparent;
+  z-index: -1;
+  border-top: 25vw solid #FFD9E1;
+  position: fixed;
+  left: 25.5vw;
+}
+
+.container {
+
+width: 50%;
+height: 30%;
+left: 6vw;
+z-index: 4;
+
+}
+
+#link:hover {
+
+    color: #FFF0F3;
+}
+
+#link:visited {
+
+    color: #ff2853;
+}
+
+.button {
+
+bottom: 30vh;
+left: 45.5vw;
+position: fixed;
+font-family: cursive;
+z-index: 5;
+width: 10vw;
+height: 8vh;
+background-color: #ddb867;
+stroke: 40px solid #6d6335;
+
+
+}
+
+.catch {
+
+width: 87%;
+position: fixed;
+height: 15%;
+background: #FFF0F3;
+left: 6.5vw;
+z-index: 7vw;
+border: 4px solid #FF6D8C;
+}
+
+.date {
+font-size: 4vw;
+font-family: cursive;
+position: fixed;
+left: 28vw;
+bottom: 60vh;
+}
+
+.entry {
+
+font-family: 'Times New Roman', Times, serif;
+font-size: 1.8vw;
+width: 45%;
+position: fixed;
+left: 28vw;
+bottom: 33vh;
+}
+
+#Entry11 {
+width: 36vw;
+left: 32vw;
+position: fixed;
+bottom: 22vh;
+
+}
+
+
+
+#diary5 {
+display: none;
+}
+
+#diary4 {
+display: none;
+}
+
+#diary3 {
+display: none;
+}
+
+#diary2 {
+display: none;
+}
+
+#diary1 {
+display: none;
+}
+
+.back {
+
+width: 3.5vw;
+bottom: 17vh;
+right: 26vw;
+position: fixed;
+
+}
+
+.next {
+
+width: 3.5vw;
+bottom: 17vh;
+left: 28vw;
+position: fixed;
+
+}
+
+
+
+</style>
+</head>
+<body>
+<main>
+    <div class="catch"> 
+        <h1 class="title"> Maria Alvarez-Montero's Diary</h1>
+    </div>
+
+    <div id="center"> 
+     <div id="diary6"> 
+        <h1 class="date"> 02/08/21 </h1>   
+        <img id="Entry11" src="location.png"> </img>
+        <img id="back6"class="back" src="backarrow.png"> </img>
+     </div>
+
+     <div class="entry" id="diary5"> 
+        <h1 class="date"> 02/03/21 </h1>   
+        Today, I woke up feeling a bit annoyed with Mason. 
+        But my mood turned around quickly when he surprised me 
+        with a vacation! He told me he booked us a weekend trip at t
+        his beautiful resort in the desert. I think it's the perfect 
+        way for us to spend some time together and relax. It's only a 
+        few hours drive from our town in Texas, and he says if we leave 
+        early in the morning, we should be <b>arriving</b> by dinnertime. I'm so 
+        excited! Let's hope it all goes well. 
+        <img id="back5"class="back" src="backarrow.png"> </img>
+        <img id="next5"class="next" src="nextarrow.png"> </img>
+        
+     </div>
+
+     <div class="entry" id="diary4" style="bottom: 22vh;"> 
+        <h1 class="date"> 01/29/21 </h1>   
+        Well, Mason and I have been dating for a few weeks now, and things 
+        are going alright. He is almost <b>always</b> very quiet and reserved, but 
+        every now and then he will snap out of nowhere. Take this weekend for 
+        instance, we were at my house, when I noticed that there were some strange 
+        men parked outside on the street. I live in the bad part of town, so my 
+        first instinct was to call 911. When I reached for the phone, Mason 
+        shouted at me! He told me he doesn't trust cops, and that we could cause 
+        someone to get hurt if we involve them. Luckily, the men left soon after,
+        but I'm just very confused. Why would he yell at me like that?
+        <img id="back4"class="back" src="backarrow.png"> </img>
+        <img id="next4"class="next" src="nextarrow.png"> </img>
+        
+     </div>
+
+     <div class="entry" id="diary3" style="bottom: 22vh;"> 
+        <h1 class="date"> 01/13/21 </h1>   
+        Last night, Mason took me on our third date. We went to this small 
+        restaurant on the edge of town that I had never heard of. The food was
+        great, but the thing is, they never gave us a check, and the manager told
+        us all the drinks were on the house. I was a bit confused, but Mason 
+        said he was friends with the owner. I tried to ask Mason more about his 
+        job, but he didn't seem like he wanted to talk about it. I guess he's sick 
+        of construction-talk after a whole day on the job. He has the most beautiful 
+        eyes, and <b>is</b> very soft-spoken. Usually, I have trouble hearing him, but there 
+        was nobody else in the restaurant that night so it didn't cause any problems.
+        <img id="back3"class="back" src="backarrow.png"> </img>
+        <img id="next3"class="next" src="nextarrow.png"> </img>
+        
+     </div>
+
+     <div class="entry" id="diary2" style="bottom: 29vh;"> 
+        <h1 class="date"> 01/09/21 </h1>   
+        Well, I'm happy to report that the date went very well. He picked me up 
+        at 7:00 and was dressed surprisingly well for a guy. At first I was a bit 
+        put off since he was driving a white van, but he explained that he worked 
+        for a construction company, and the car was given to him by them. At dinner, 
+        he told me all about his family- how he didn't come from money but his parents 
+        were very hardworking people. He says he works hard to show appreciation for 
+        his parent's <b>sacrifice.</b> I'm starting to like this guy. 
+        <img id="back2"class="back" src="backarrow.png"> </img>
+        <img id="next2"class="next" src="nextarrow.png"> </img>
+     </div>
+
+     <div class="entry" id="diary1" style="bottom: 26vh;"> 
+        <h1 class="date"> 01/04/21 </h1>   
+        <b>The</b> most amazing thing happened today. I was going grocery shopping, 
+        and I needed to find the tomato sauce. I got to the right aisle, but 
+        the brand I was looking for was on the top shelf, and I couldn't reach 
+        it! Suddenly, a handsome (and very tall) man came up to me, saw what I 
+        was looking for, and handed me the jar. He was so sweet. We started to 
+        chat, and we really hit it off! His name is Mason, and he asked me to go 
+        on a date this Friday! I'm a bit nervous, but I can't deny that I'm 
+        intrigued. We'll see how this date goes, but I'm feeling optimistic.
+        <img id="back1"class="back" src="backarrow.png"> </img>
+        <img id="next1"class="next" src="nextarrow.png"> </img>
+     </div>
+    
+        
+
+    </div>
+</main>
+</body>
+</html>
