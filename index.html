@@ -19,7 +19,6 @@
 
       body {
         font-size: 48px;
-        position: fixed;
         background: #000000;
         -webkit-animation: AnimationName 200s ease infinite;
         -moz-animation: AnimationName 200s ease infinite;
@@ -27,20 +26,20 @@
         overflow: hidden;
       }
 
-      #bodie {
+  #bodie {
 
-        height: 10000px;
-        width: 100%;
+    height: 10000px;
+    width: 100%;
       }
 
-      #title {
-      font-size: 133%;
-      font-family: Arial;
-      color: #000000;
-      top: 5vh;
-      max-width: 100%;
-      left: 18%;
-      position: absolute;
+  #title {
+    font-size: 133%;
+    font-family: Arial;
+    color: #000000;
+    top: 5vh;
+    max-width: 100%;
+    left: 18%;
+    position: absolute;
       }
 
       #subtitle {
@@ -62,30 +61,15 @@
       }
 
 
-      #title {
-
-      font-size: 12vh;
-      font-style: bold;
-      right: 35vh;
-      top: 35vh;
-      position: fixed;
-      min-width: 500px;
-      max-width: 2000px;
-      color: #ffffff;
-      border: 6px black;
-      }
-
-
-
-
       .design {
 
       font-size: 8vh;
       font-family: BentonB;
       color: #ffffff;
-      top: 4vh;
+      /* top: 4vh;
       right: 4vh;
-      position: fixed;
+      position: fixed; */
+      display: block;
 
       }
 
@@ -99,9 +83,10 @@
       font-size: 8vh;
       font-family: BentonB;
       color: #ffffff;
-      top: 4vh;
+      display: block;
+      /* top: 4vh;
       left: 4vh;
-      position: fixed;
+      position: fixed; */
 
       }
 
@@ -123,18 +108,6 @@
 
       }
 
-      .misc:hover {
-
-      font-size: 9vh;
-
-      }
-
-      #misc:visited {
-
-      color:#ffffff;
-      position: fixed;
-
-      }
 
 #fishtank {
 
@@ -163,24 +136,27 @@ margin: auto;
 
 }
 
+.container {
+
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+width: 98.5vw;
+
+}
+
         </style>
         <link rel="shortcut icon" href="favicon.ico"></link>
 <body>
 
-<div style="text-align:center" id=title> <u> </u> </div>
+<div id=title> </div>
 
-<img id=logo src="logo.png"> </img>
 
-<div>
+
+<div class="container">
   <a href= "design.html" class="design">DESIGN</a>
-</div>
-
-<div>
   <a href= "about.html" class="about">ABOUT</a>
-</div>
-
-<div>
-<!-- <a href= "misc.html" class="misc">MISC.</a> -->
+  <img id=logo src="logo.png"> </img>
 </div>
 
 <iframe id=fishtank width="580" height="645" src="https://www.youtube.com/embed/kGdg22YDl8Y?autoplay=1&mute=1"mute=1 autoplay=1>
