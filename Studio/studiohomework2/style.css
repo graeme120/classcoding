@@ -1,0 +1,30 @@
+@media (max-width: 550px) {
+}
+
+   body {
+      width: 100%;
+      font-size: 16px;
+      color: #000000;
+      display: grid;
+      grid-template-columns: 1fr 50px 300px 50;
+      grid-template-rows: 50% 50%;
+    }
+
+
+
+ 
+
+}
+
+div {
+  
+  grid-column-start: 0;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: black;
+  height: 100%;
+} 
+
+
+

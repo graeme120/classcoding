@@ -57,7 +57,7 @@ a {
     background: rgb(255,126,98);
     background: linear-gradient(90deg, rgba(255,126,98,1) 0%, rgba(129,89,107,1) 100%);
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    background-clip: text;
     border-bottom: 0.2vh solid #504f4e;
 
 }
