@@ -58,6 +58,7 @@ div:nth-child(2) {
     max-height: 550px;
     max-width: 95%;
     margin-top: 2.5vh;
+    justify-content: flex-start;
     margin-bottom: 4vh;
     font-family: Helvetica11;
     position: fixed;
@@ -83,14 +84,14 @@ span:nth-child(2) {
 button {
 
     font-size: 2.2rem;    
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
     padding-left: 0.6em;
     padding-right: 0.6em;
     font-style: #000;
     border: transparent;
     background: #ffffff;
-    top: 73vh;
+    top: 72.5vh;
     left: 26vw;
    
 }
@@ -172,7 +173,7 @@ input {
 .block {
 
   font-family: Helvetica1;
-  font-size: 140%;
+  font-size: 170%;
   margin-right: 0.6em;
 }
 
