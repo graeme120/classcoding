@@ -90,7 +90,7 @@ button {
     font-style: #000;
     border: transparent;
     background: #ffffff;
-    top: 77vh;
+    top: 73vh;
     left: 26vw;
    
 }
@@ -99,6 +99,7 @@ button {
     --borderWidth: 2px;
     position: relative;
     border-radius: var(--borderWidth);
+    font-style: #000;
   }
   .gradient-border:after {
     content: '';
@@ -112,6 +113,7 @@ button {
     z-index: -1;
     animation: animatedgradient 6s ease infinite;
     background-size: 200% 200%;
+    font-style: #000;
   }
   
   
@@ -170,7 +172,7 @@ input {
 .block {
 
   font-family: Helvetica1;
-  font-size: 100%;
+  font-size: 140%;
   margin-right: 0.6em;
 }
 
