@@ -1,4 +1,8 @@
-@media (max-width: 550px) {
+@media (min-width: 650px) {
+
+display: flex;
+font-size: 4em;
+
 }
 
 @font-face { font-family: Helvetica1; src: url('Helvetica-Revised/Helvetica1.5.otf'); }
@@ -53,7 +57,7 @@ justify-content: space-between;
 div:nth-child(2) {
 
     max-height: 550px;
-    max-width: 360px;
+    max-width: 100%;
     margin-top: 2.5vh;
     margin-bottom: 4vh;
     font-family: Helvetica11;
