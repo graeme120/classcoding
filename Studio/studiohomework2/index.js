@@ -15,10 +15,10 @@ textFit(document.querySelector(".block"));
 const shareButton = document.querySelector('.share-button');
 
 shareButton.addEventListener('click', async () => {
-  const response = await fetch(`H${value}.png`);
+  const response = await fetch(`H1.png`);
   const blob = await response.blob();
   const filesArray = [
-    new File([blob], 'The Poor Image.png', {
+    new File([blob], 'The_Poor_Image.png', {
       type: 'image/png',
       lastModified: new Date().getTime(),
     }),
