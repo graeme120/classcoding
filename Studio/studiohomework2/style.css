@@ -90,7 +90,7 @@ button {
     font-style: #000;
     border: transparent;
     background: #ffffff;
-    top: 84vh;
+    top: 77vh;
     left: 26vw;
    
 }
@@ -170,7 +170,7 @@ input {
 .block {
 
   font-family: Helvetica1;
-  font-size: 160%;
+  font-size: 100%;
   margin-right: 0.6em;
 }
 
