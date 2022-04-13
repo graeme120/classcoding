@@ -1,0 +1,65 @@
+@font-face {
+
+  font-family: "suisse_intlmedium";
+  src: url("./fonts/suisseintl-medium-webfont.woff2") format("woff2"),
+    url("./fonts/suisseintl-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+body, html {
+
+  height: 100%;
+  margin: 0;
+
+}
+
+.screen {
+  
+  background-image: url("Screen.jpg");
+  z-index: 2;
+
+   /* Full height */
+  height: 100%;
+   /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+
+
+img {
+
+  width: 500px;
+  stroke: 10px solid black;
+
+}
+
+#follow {
+height: 500px;
+position: fixed;
+transform: translate(-480px,-330px);
+}
+.stamp {
+  position: fixed;
+  transform: translate(-480px,-330px);
+  height: 500px;
+}
+#follow img {
+
+ filter: drop-shadow(5px 5px 5px black);
+
+}
+
+/* 
+.container {
+  min-width: 100vw;
+  min-height: 100vh;
+} */
+
+
+
+
