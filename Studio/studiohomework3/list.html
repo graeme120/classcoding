@@ -1,82 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<style>
+  </head>
+  <style>
     body {
-        background-color: black;
-        width: 100%;
-        margin: 0%;
-        color: white;
-        
+      background-color: black;
+      width: 100vw;
+      margin: 0%;
+      color: white;
+      font-family: Helvetica, sans-serif;
+      display: flex;
     }
     img {
-        width: 80px;
+      width: 150px;
     }
     table {
-        color: white; 
-        display: grid;
-        width: 100vw;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 5%;
+      color: white;
+      width: 100%;
+      border-collapse: collapse;
     }
     .a {
-        grid-column: 1;
+      min-width: 10%;
+      padding-left: 5vw;
+      font-size: 4em;
     }
     .b {
-        grid-column: 2;
+      min-width: 35%;
+      font-size: 3.5em;
     }
     .c {
-        grid-column: 3;
+      min-width: auto;
+      font-size: 4em;
     }
     .d {
-        grid-column: 4;
+      min-width: 5%;
+      font-size: 4em;
+      text-align: center;
     }
-
-    table,th,td {
-        padding: 5%;
+    .e {
+      min-width: 5%;
+      font-size: 4em;
+      text-align: center;
     }
-
-    table{
-        width: 90vw;
+    .sticker {
+      align-self: center;
+      position: relative;
     }
-    
-
-</style>
-<body>
+    span.tooltiptext {
+    vertical-align: middle;
+    }
+  </style>
+  <body>
     <table>
-    <!-- Number, Name, Year, System -->
-    <br></br>
-    <tr class= row>
-        <td class="a"> 001 </td>
-        <td class="b"> 
-            <div class="tooltip"> DR.MARIO
-                <span class="tooltiptext">
-                    <img class="sticker" src="1990_MARIOWORLD.png" alt="" />
-                </span>
-            </div>  
-        </td>
-        <td class="c"> 1990 </td>
-        <td class="d"> NES </td>
-    </tr>
-
-    <tr class= row>
-        <td class="a"> 001 </td>
-        <td class="b"> 
-            <div class="tooltip"> DR.MARIO
-                <span class="tooltiptext">
-                    <img class="sticker" src="1990_MARIOWORLD.png" alt="" />
-                </span>
-            </div>  
-        </td>
-        <td class="c"> 1990 </td>
-        <td class="d"> NES </td>
-    </tr>
+      <tbody>
+        <tr class="row">
+          <td class="a">001</td>
+          <td class="b">
+            SUPER MARIO WORLD
+            <span class="tooltiptext">
+              <img class="sticker" src="1990_MARIOWORLD.png" alt="" />
+            </span>
+            <div class="tooltip"></div>
+          </td>
+          <td class="d">1990</td>
+          <td class="e">NES</td>
+        </tr>
+        <tr class="row">
+          <td class="a">001</td>
+          <td class="b">
+            MEGA MAN
+            <span class="tooltiptext">
+              <img class="sticker" src="1990_MARIOWORLD.png" alt="" />
+            </span>
+            <div class="tooltip"></div>
+          </td>
+          </td>
+          <td class="d">1990</td>
+          <td class="e">NES</td>
+        </tr>
+        <tr class="row">
+          <td class="a">001</td>
+          <td class="b">
+            SECRET OF MONKEY ISLAND
+            <span class="tooltiptext">
+                <img class="sticker" src="1990_MARIOWORLD.png" alt="" />
+              </span>
+            <div class="tooltip"></div>
+          </td>
+          </td>
+          <td class="d">1990</td>
+          <td class="e">NES</td>
+        </tr>
+      </tbody>
     </table>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-

@@ -1,65 +1,137 @@
 @font-face {
-
-  font-family: "suisse_intlmedium";
+  font-family: "swiss";
   src: url("./fonts/suisseintl-medium-webfont.woff2") format("woff2"),
     url("./fonts/suisseintl-medium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-
 }
 
-body, html {
-
+body,
+html {
   height: 100%;
   margin: 0;
+  background: black;
+}
 
+.brand {
+  /* width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-self: center; */
+  position: fixed;
+  width: 12vw;
+  left: 2vw;
+  top: 2vw;
+  filter: drop-shadow(5px 5px 5px black);
+  z-index: 3;
 }
 
 .screen {
-  
-  background-image: url("Screen.jpg");
+  /* filter: invert(100%); */
   z-index: 2;
-
-   /* Full height */
+  /* Full height */
   height: 100%;
-   /* Center and scale the image nicely */
+  width: 100%;
+  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
+  display: flex;
 }
 
-
-
 img {
-
-  width: 500px;
+  width: 30em;
   stroke: 10px solid black;
-
 }
 
 #follow {
-height: 500px;
-position: fixed;
-transform: translate(-480px,-330px);
+  height: 500px;
+  position: fixed;
+  transform: translate(-480px, -330px);
+  z-index: 2;
 }
 .stamp {
   position: fixed;
-  transform: translate(-480px,-330px);
+  transform: translate(-480px, -330px);
   height: 500px;
+  /* filter: drop-shadow(5px 5px 5px black); */
+  /* -webkit-filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px 1px 0 black)
+    drop-shadow(1px -1px 0 black) drop-shadow(-1px -1px 0 black);
+
+  filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px 1px 0 black)
+    drop-shadow(1px -1px 0 black) drop-shadow(-1px -1px 0 black); */
 }
 #follow img {
-
- filter: drop-shadow(5px 5px 5px black);
-
+  filter: drop-shadow(5px 5px 5px black);
 }
+.shadow {
+  filter: brightness(0%);
+}
+.floor {
+  position: fixed;
+  height: 120vh;
+  width: 120vw;
+  left: -10.25vw;
+  bottom: -4vh;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+#listbody {
+  top: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  z-index: 2;
+}
+.row {
+  display: flex;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: larger;
+  width: 100%;
+  /* border-collapse: collapse; */
+  margin: 0;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.a {
+  min-width: 8%;
+  padding-left: 3vw;
+  font-size: 2em;
+}
+.b {
+  min-width: 5%;
+  max-width: 50%;
+  width: auto;
+  font-size: 3.5em;
+}
+.image {
+  width: 100px;
+  align-self: center;
+  align-items: baseline;
+  position: relative;
+}
+.d {
+  min-width: 20%;
+  font-size: 1.5em;
+  position: relative;
 
-/* 
-.container {
-  min-width: 100vw;
-  min-height: 100vh;
-} */
-
-
-
-
+  right: 0;
+}
+.e {
+  min-width: 5%;
+  font-size: 1.5em;
+  position: relative;
+  justify-content: flex-end;
+}
+.subrow {
+  font-size: 1em;
+  width: 40%;
+  width: auto;
+  max-width: 55;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  padding-right: 5%;
+}
