@@ -1,7 +1,20 @@
 @font-face {
-  font-family: "swiss";
-  src: url("./fonts/suisseintl-medium-webfont.woff2") format("woff2"),
-    url("./fonts/suisseintl-medium-webfont.woff") format("woff");
+  font-family: "Garamond";
+  src: url("Apple Garamond/AppleGaramond.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Light";
+  src: url("Apple Garamond/AppleGaramond-Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Garamond Light Italic";
+  src: url("Apple Garamond/AppleGaramond-LightItalic.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -11,6 +24,7 @@ html {
   height: 100%;
   margin: 0;
   background: black;
+  /* scroll-behavior: smooth; */
 }
 
 .brand {
@@ -69,8 +83,8 @@ img {
 }
 .floor {
   position: fixed;
-  height: 120vh;
-  width: 120vw;
+  height: 128vh;
+  width: 125vw;
   left: -10.25vw;
   bottom: -4vh;
   min-width: 100%;
@@ -88,7 +102,7 @@ img {
 .row {
   display: flex;
   color: white;
-  font-family: "Times New Roman", Times, serif;
+
   font-size: larger;
   width: 100%;
   /* border-collapse: collapse; */
@@ -97,21 +111,19 @@ img {
   flex-wrap: nowrap;
 }
 .a {
-  min-width: 8%;
+  min-width: 5%;
   padding-left: 3vw;
-  font-size: 2em;
+  font-size: 1.25em;
 }
 .b {
-  min-width: 40%;
-  max-width: 30%;
-  width: auto;
+  min-width: 50%;
+  max-width: 60%;
   font-size: 3.5em;
   flex-wrap: nowrap;
+  font-family: "Garamond", Times, serif;
 }
 .image {
   width: 100px;
-  align-self: center;
-  align-items: baseline;
   position: relative;
 }
 .d {
@@ -122,6 +134,8 @@ img {
   justify-content: center;
   padding-right: 10%;
   flex-wrap: nowrap;
+  font-family: "Garamond Light Italic";
+  padding-right: 5vw;
 }
 .e {
   min-width: 5%;
@@ -129,12 +143,71 @@ img {
   position: relative;
   justify-content: center;
   flex-wrap: nowrap;
+  font-family: "Garamond Light Italic";
 }
 .subrow {
   font-size: 1em;
   min-width: 35%;
   max-width: 60%;
-  flex-wrap: nowrap;
   position: relative;
   padding-right: 50%;
+}
+.clear {
+  z-index: 1;
+  color: white;
+  font-family: "Garamond Light";
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  top: 0.5vh;
+  width: auto;
+  font-size: 3em;
+  right: 4vw;
+  z-index: 100;
+}
+.clear::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.clear:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.index {
+  z-index: 1;
+  color: white;
+  font-family: "Garamond Light";
+  position: fixed;
+  display: flex;
+  top: 0.5vh;
+  right: 15vw;
+  justify-content: flex-end;
+  width: auto;
+  font-size: 3em;
+  z-index: 5;
+}
+.index::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.index:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

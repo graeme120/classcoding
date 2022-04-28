@@ -23,7 +23,7 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
     document.addEventListener("click", stamp);
 
     function stamp(e) {
-      console.log("onClick", e.pageX);
+      // console.log("onClick", e.pageX);
       let x = e.pageX;
       let y = e.pageY;
       document.body.innerHTML += `<div class="stamp" style="top: ${y}px; left: ${x}px">
@@ -44,7 +44,7 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
     });
 
     data.records.forEach((logo, index) => {
-      console.log(logo);
+      // console.log(logo);
       // <div class="b">${indexed number}</div>
       logos.innerHTML += `
           <div class=row>
@@ -70,25 +70,31 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
     //    all code should go here
 
     function onMouseMove(e) {
-      console.log("mousemove", e.pageX);
+      // console.log("mousemove", e.pageX);
       follow.style.opacity = 1;
       follow.style.left = e.pageX + "px";
       follow.style.top = e.pageY + "px";
     }
     document.addEventListener("mousemove", onMouseMove);
 
-    $(document).ready(function () {
-      $(".go-top").hide(0);
+    // $(document).ready(function () {
+    //   $(".go-top").hide(0);
 
-      $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-          $(".go-top").fadeIn(100);
-        }
-      });
-      $(".go-top").click(function () {
-        event.preventDefault();
+    //   $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 100) {
+    //       $(".go-top").fadeIn(100);
+    //     }
+    //   });
+    //   $(".go-top").click(function () {
+    //     event.preventDefault();
 
-        $("html , body").animate({ scrollTop: 0 }, 0);
-      });
-    });
+    //     $("html , body").animate({ scrollTop: 0 }, 0);
+    //   });
+    // });
   });
+// function clear() {
+//   console.log("clear");
+//   document.querySelectorAll(".stamp").forEach((stamp) => {
+//     stamp.remove();
+//   });
+// }
