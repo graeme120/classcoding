@@ -8,16 +8,28 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<link rel="preload" href="Helvetica-Revised/Helvetica1.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica2.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica3.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica4.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica5.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica6.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica7.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica8.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica9.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica10.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica11.5.otf" as="font" type="font/otf" crossorigin="anonymous">
+<link rel="preload" href="Helvetica-Revised/Helvetica12.5.otf" as="font" type="font/otf" crossorigin="anonymous">
 
+<link rel="preload" as="style" href="style.css">
 
-</head>
-
-
-
-
-
+</head> 
+<body>
     <main class="container">
-        <div><span>HITO STERYL</span><span>IN DEFENSE OF THE POOR IMAGE</span></div>
+        <header>
+            <span>HITO STERYL</span>
+            <span>IN DEFENSE OF THE POOR IMAGE</span>
+        </header>
         <div class="block">
         In this light, perhaps one has to redefine the value of the image, or, more 
         precisely, to create a new perspective for it. Apart from resolution and 
@@ -30,12 +42,13 @@
         of compressed and flexible data packages that can be integrated into ever-newer 
         combinations and sequences.
         </div>
+    <div class="buttons">
+        <input type="range" min="1" max="11" value="50" class="slider" id="myRange" step="1"oninput="changeFont()">
+        </input>
+        <button id="button" class="gradient-border" class="share-button"> SHARE </button>
+    </div>
     </main>
-    <input type="range" min="1" max="11" value="50" class="slider" id="myRange" step="1"
-            oninput="changeFont()">
-
-    <button id="button" class="gradient-border" class="share-button"> SHARE </button>
-  </div>
-<script src="index.js"></script>
+    <script src="index.js"></script>
+    
 </body>
 </html>

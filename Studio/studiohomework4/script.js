@@ -1,19 +1,28 @@
-console.log(data);
+let filterValue = "all";
 
-function handleDropdown() {
-  console.log(event.target.value);
-}
+fetch("https://api.airtable.com/v0/appFOm7DDpMYM90u9/albums", {
+  headers: {
+    Authorization: "Bearer keyxq87yw8w7CglcJ",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
 
-const content = document.querySelector(".content");
+    function handleDropdown() {
+      console.log(event.target.value);
+    }
 
-function generateContent() {
-  data.filter((item) => {
-    return item.type === "brass";
-  });
+    const content = document.querySelector(".content");
 
-  data.forEach((item) => {
-    console.log(item);
-    content.innerHTML += `
+    function generateContent() {
+      data.filter((item) => {
+        return item.type === "brass";
+      });
+
+      data.forEach((item) => {
+        console.log(item);
+        content.innerHTML += `
     <div class ="card">
         <p>trending number: ${item.popularity}</p>
         <h3>${item.name}</h3>
@@ -24,7 +33,8 @@ function generateContent() {
         </p>
     </div>
     `;
+      });
+    }
   });
-}
 
 generateContent();

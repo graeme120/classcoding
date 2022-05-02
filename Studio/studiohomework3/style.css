@@ -24,7 +24,7 @@ html {
   height: 100%;
   margin: 0;
   background: black;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 .brand {
