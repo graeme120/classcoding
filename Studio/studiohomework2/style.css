@@ -281,9 +281,9 @@ header {
   }
 }
 
-@media (max-width: 360px) {
+@media (min-width: 300px) {
   .block {
-    font-size: 25px;
+    font-size: 27px;
   }
 }
 
