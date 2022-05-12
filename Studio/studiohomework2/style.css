@@ -277,13 +277,13 @@ header {
 
 @media (min-width: 400px) {
   .block {
-    font-size: 6.6vw;
+    font-size: 30px;
   }
 }
 
 @media (max-width: 360px) {
   .block {
-    font-size: 5.6vw;
+    font-size: 25px;
   }
 }
 
