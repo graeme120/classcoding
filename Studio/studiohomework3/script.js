@@ -49,14 +49,14 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
       logos.innerHTML += `
           <div class=row>
             <div class="a">${logo.fields.index}</div>
-            <div class="b">${logo.fields.name}</div>
-            <img class="image" src=${logo.fields.image[0].thumbnails.large.url}></img>
-            <div class=subrow>
-               <div class="d">${logo.fields.platform}</div>
-               <div class="e">${logo.fields.release_year}</div>
-            </div>
+            <div class="b">${logo.fields.name}
+            <img class="image" style="vertical-align: middle; position: relative"  src=${logo.fields.image[0].thumbnails.large.url}></img>
           </div>
-         `;
+            <div class=subrow>
+               ${logo.fields.platform},<br>     
+               ${logo.fields.release_year}</div>
+            </div>
+          </div>`;
 
       // logos.innerHTML += `
       //   <div class="album">

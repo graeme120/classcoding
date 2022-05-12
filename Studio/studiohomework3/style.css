@@ -116,8 +116,8 @@ img {
   font-size: 1.25em;
 }
 .b {
-  min-width: 50%;
-  max-width: 60%;
+  min-width: 65%;
+  max-width: 70%;
   font-size: 3.5em;
   flex-wrap: nowrap;
   font-family: "Garamond", Times, serif;
@@ -146,11 +146,14 @@ img {
   font-family: "Garamond Light Italic";
 }
 .subrow {
-  font-size: 1em;
-  min-width: 35%;
+  font-size: 1.5em;
+  font-style: italic;
+  min-width: 15%;
   max-width: 60%;
   position: relative;
   padding-right: 50%;
+  display: flex;
+  justify-content: flex-start;
 }
 .clear {
   z-index: 1;

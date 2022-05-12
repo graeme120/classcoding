@@ -8,20 +8,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container">
-      <div class="content"></div>
-      <h1>Airtable Demo Part 2</h1>
-
-      <select id="record label filter">
-        <option value="All" selected>All</option>
-        <option value="Tamla/Motown">Tamla/Motown</option>
-        <option value="Capitol">Capitol Records</option>
-        <option value="Reprise">Reprise</option>
-        <option value="Apple">Apple</option>
-      </select>
-
-      <script src="data.js"></script>
-      <script src="script.js"></script>
+    <main>
+      <div class="container">
+        <p class="title">
+          CONSPIRACY THEORY GENERATOR 2022
+        </p>
+      <div class="buttons">
+        <button class="refresh" disabled> 
+          REFRESH
+        </button>
+        <button class="share" disabled>
+          SHARE
+        </button>
+      </div>
+      <div class="inputHide">
+      <input id="textinput" type="text" placeholder="Who are you suspicious of..."> </input>
+      <div class ="conspiracy" id="slideSource"></div>
+    </div>
     </main>
+    <script src="script_real.js"></script>
   </body>
 </html>

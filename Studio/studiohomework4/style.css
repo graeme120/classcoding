@@ -1,0 +1,270 @@
+@font-face {
+  font-family: "Font1";
+  src: url("RandomFonts/Font1.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font2";
+  src: url("RandomFonts/Font2.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font3";
+  src: url("RandomFonts/Font3.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font4";
+  src: url("RandomFonts/Font3.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font5";
+  src: url("RandomFonts/Font5.otf") format("opentype");
+}
+@font-face {
+  font-family: "Font6";
+  src: url("RandomFonts/Font6.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font7";
+  src: url("RandomFonts/Font7.otf") format("opentype");
+}
+@font-face {
+  font-family: "Font8";
+  src: url("RandomFonts/Font8.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font9";
+  src: url("RandomFonts/Font9.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font10";
+  src: url("RandomFonts/Font10.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font11";
+  src: url("RandomFonts/Font11.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font12";
+  src: url("RandomFonts/Font12.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font13";
+  src: url("RandomFonts/Font13.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font14";
+  src: url("RandomFonts/Font14.otf") format("opentype");
+}
+@font-face {
+  font-family: "Font15";
+  src: url("RandomFonts/Font15.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font16";
+  src: url("RandomFonts/Font16.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font17";
+  src: url("RandomFonts/Font17.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font18";
+  src: url("RandomFonts/Font18.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font19";
+  src: url("RandomFonts/Font19.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font20";
+  src: url("RandomFonts/Font20.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font21";
+  src: url("RandomFonts/Font21.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font22";
+  src: url("RandomFonts/Font22.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font23";
+  src: url("RandomFonts/Font23.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font24";
+  src: url("RandomFonts/Font24.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font25";
+  src: url("RandomFonts/Font25.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font26";
+  src: url("RandomFonts/Font26.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font27";
+  src: url("RandomFonts/Font27.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font28";
+  src: url("RandomFonts/Font28.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font29";
+  src: url("RandomFonts/Font29.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Font30";
+  src: url("RandomFonts/Font30.ttf") format("truetype");
+}
+@font-face {
+  font-family: "BOLD";
+  src: url("RandomFonts/BOLD.ttf") format("truetype");
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+html {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 6.3% 80% 13.7%;
+  grid-template-columns: 2.5% 7.5% 80% 7.5% 2.5%;
+}
+.refresh {
+  font-family: Helvetica, sans-serif;
+}
+.conspiracy {
+  font-size: 5.5em;
+  font-family: BOLD;
+  text-align: center;
+  height: 80%;
+  grid-area: 2 / -4 / 3 / -3;
+  position: relative;
+  padding-top: 8vh;
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.structure {
+  height: 100%;
+  margin: auto;
+}
+.buttons {
+  grid-area: 3 / -4 / 4 / -3;
+  position: relative;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+}
+.title {
+  grid-area: 1 / -4 / 2 / -3;
+  position: relative;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  font-family: Helvetica, sans-serif;
+}
+#textinput {
+  height: 10%;
+  width: 100%;
+  align-self: center;
+  z-index: 5;
+  grid-area: 2 / -4 / 3 / -3;
+  background: transparent;
+  position: relative;
+  border: 0;
+  font-size: 8vh;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  padding: 20px 0;
+}
+#textinput:focus {
+  border-bottom: 2px solid #000000;
+}
+input:focus::placeholder {
+  color: transparent;
+}
+input::after {
+  display: none;
+}
+.inputHide {
+  grid-area: 1 / -4 / 2 / -3;
+  position: relative;
+}
+.hideMe {
+  visibility: hidden;
+}
+
+button {
+  background: transparent;
+  border: transparent;
+  font-size: 4vh;
+}
+
+.refresh {
+  padding-right: 10px;
+  z-index: 7;
+}
+.refresh:enabled:hover {
+  cursor: pointer;
+}
+.share {
+  padding-left: 10px;
+  z-index: 7;
+}
+.share:enabled:hover {
+  cursor: pointer;
+}
+
+.inputHide {
+  grid-area: 2 / -4 / 3 / -3;
+  background: transparent;
+  position: relative;
+}
+
+#slideSource {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#slideSource.fade {
+  opacity: 0;
+}
+
+/* refresh[disabled]; */
