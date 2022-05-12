@@ -53,7 +53,7 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
             <img class="image" style="vertical-align: middle; position: relative"  src=${logo.fields.image[0].thumbnails.large.url}></img>
           </div>
             <div class=subrow>
-               ${logo.fields.platform},<br>     
+               ${logo.fields.platform},    
                ${logo.fields.release_year}</div>
             </div>
           </div>`;

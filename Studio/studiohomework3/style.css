@@ -148,7 +148,7 @@ img {
 .subrow {
   font-size: 1.5em;
   font-style: italic;
-  min-width: 15%;
+  min-width: 20%;
   max-width: 60%;
   position: relative;
   padding-right: 50%;
@@ -156,7 +156,7 @@ img {
   justify-content: flex-start;
 }
 .clear {
-  z-index: 1;
+  z-index: 2;
   color: white;
   font-family: "Garamond Light";
   position: fixed;
@@ -166,7 +166,6 @@ img {
   width: auto;
   font-size: 3em;
   right: 4vw;
-  z-index: 100;
 }
 .clear::after {
   content: "";
@@ -196,7 +195,7 @@ img {
   justify-content: flex-end;
   width: auto;
   font-size: 3em;
-  z-index: 5;
+  z-index: 2;
 }
 .index::after {
   content: "";
