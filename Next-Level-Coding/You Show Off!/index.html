@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="index.js"></script>
+
+    <style>
+      :root {
+        --pixel-size: 2px;
+        --grid-cell: calc(var(--pixel-size) * 16);
+        --bg: #000000;
+      }
+      @media (min-width: 700px) {
+        :root {
+          --pixel-size: 3px;
+        }
+      }
+      @media (min-width: 1000px) {
+        :root {
+          --pixel-size: 4px;
+        }
+      }
+      /* @media( min-width: 1000px ) {
+           :root {
+              --pixel-size: 5px;
+           }
+        } */
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        background: var(--bg);
+        display: block;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .floor {
+        position: fixed;
+        bottom: 0;
+        min-width: 160%;
+        min-height: 160%;
+        z-index: -1;
+      }
+
+      .pixel-art {
+        image-rendering: pixelated;
+      }
+
+      .character {
+        width: calc(var(--grid-cell) * 2);
+        height: calc(var(--grid-cell) * 2);
+        position: absolute;
+        top: 40%;
+        right: 70%;
+        overflow: hidden;
+      }
+
+      .shadow {
+        width: calc(var(--grid-cell) * 2);
+        height: calc(var(--grid-cell) * 2);
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url("https://assets.codepen.io/21542/DemoRpgCharacterShadow.png")
+          no-repeat no-repeat;
+        background-size: 100%;
+      }
+
+      .character_spritesheet {
+        position: absolute;
+        background: url("robots5.png") no-repeat no-repeat;
+        background-size: 100%;
+        width: calc(var(--grid-cell) * 8);
+        height: calc(var(--grid-cell) * 8);
+      }
+
+      .character[facing="right"] .character_spritesheet {
+        background-position-y: calc(var(--pixel-size) * -32);
+      }
+      .character[facing="up"] .character_spritesheet {
+        background-position-y: calc(var(--pixel-size) * -64);
+      }
+      .character[facing="left"] .character_spritesheet {
+        background-position-y: calc(var(--pixel-size) * -96);
+      }
+      .character[walking="true"] .character_spritesheet {
+        animation: walkAnimation 1s steps(4) infinite;
+      }
+
+      @keyframes walkAnimation {
+        from {
+          transform: translate3d(0%, 0%, 0);
+        }
+        to {
+          transform: translate3d(-100%, 0%, 0);
+        }
+      }
+
+      .icon {
+        position: absolute;
+        top: 40%;
+        left: 30%;
+      }
+
+      .paper1 {
+        display: none;
+      }
+
+      .paper2 {
+        position: relative;
+        /* top: -1%;
+        right: 2%; */
+        height: calc(var(--grid-cell) * 2);
+        width: calc(var(--grid-cell) * 2);
+        image-rendering: pixelated;
+        display: none;
+      }
+
+      .paper3 {
+        position: relative;
+        /* top: 13%;
+        right: 2%; */
+        height: calc(var(--grid-cell) * 2);
+        width: calc(var(--grid-cell) * 2);
+        image-rendering: pixelated;
+        display: none;
+      }
+
+      .paper4 {
+        position: relative;
+        /* top: 30%;
+        right: 2%; */
+        height: calc(var(--grid-cell) * 2);
+        width: calc(var(--grid-cell) * 2);
+        image-rendering: pixelated;
+        display: none;
+      }
+
+      .paper5 {
+        position: relative;
+        /* top: 47%;
+        right: 2%; */
+        height: calc(var(--grid-cell) * 2);
+        width: calc(var(--grid-cell) * 2);
+        image-rendering: pixelated;
+        display: none;
+      }
+
+      .paper6 {
+        position: relative;
+        /* top: 65%;
+        right: 2%; */
+        height: calc(var(--grid-cell) * 2);
+        width: calc(var(--grid-cell) * 2);
+        image-rendering: pixelated;
+        display: none;
+      }
+
+      .paper7 {
+        position: relative;
+        /* top: 81%;
+        right: 2%; */
+        height: calc(var(--grid-cell) * 2);
+        width: calc(var(--grid-cell) * 2);
+        image-rendering: pixelated;
+        display: none;
+        cursor: pointer;
+      }
+
+      .miniletter {
+        position: fixed;
+        top: 40%;
+        right: 45%;
+        height: calc(var(--grid-cell) * 2);
+        width: calc(var(--grid-cell) * 2);
+        image-rendering: pixelated;
+        cursor: pointer;
+        display: none;
+        z-index: 12;
+      }
+
+      .paper {
+        position: fixed;
+        top: 4%;
+        right: 23%;
+        height: calc(var(--grid-cell) * 11);
+        width: calc(var(--grid-cell) * 11);
+        image-rendering: pixelated;
+        display: none;
+      }
+
+      #scrap1 {
+        position: fixed;
+        top: 20vh;
+        right: 14vh;
+        height: calc(var(--grid-cell) * 3);
+        width: calc(var(--grid-cell) * 3);
+        image-rendering: pixelated;
+        cursor: pointer;
+      }
+
+      #scrap2 {
+        position: fixed;
+        bottom: 10vh;
+        left: 74vh;
+        height: calc(var(--grid-cell) * 3);
+        width: calc(var(--grid-cell) * 3);
+        image-rendering: pixelated;
+        display: none;
+        cursor: pointer;
+      }
+
+      #scrap3 {
+        position: fixed;
+        top: 11vh;
+        left: 14vh;
+        height: calc(var(--grid-cell) * 3);
+        width: calc(var(--grid-cell) * 3);
+        image-rendering: pixelated;
+        display: none;
+        cursor: pointer;
+        z-index: 5;
+      }
+
+      #scrap4 {
+        position: fixed;
+        top: 32vh;
+        left: 52vw;
+        height: calc(var(--grid-cell) * 3);
+        width: calc(var(--grid-cell) * 3);
+        image-rendering: pixelated;
+        display: none;
+        cursor: pointer;
+        z-index: 5;
+      }
+
+      #scrap5 {
+        position: fixed;
+        bottom: 16vh;
+        right: 42vh;
+        height: calc(var(--grid-cell) * 3);
+        width: calc(var(--grid-cell) * 3);
+        image-rendering: pixelated;
+        display: none;
+        cursor: pointer;
+        z-index: 5;
+      }
+
+      #scrap6 {
+        position: fixed;
+        right: 43vh;
+        height: calc(var(--grid-cell) * 3);
+        width: calc(var(--grid-cell) * 3);
+        image-rendering: pixelated;
+        display: none;
+        cursor: pointer;
+        z-index: 5;
+      }
+
+      .bottomDescription {
+        position: fixed;
+        margin: auto;
+        height: 15%;
+        width: 65%;
+        bottom: 10vh;
+        justify-content: center;
+        align-items: center;
+        left: 30vw;
+        z-index: 4;
+      }
+      .bottomDescription p {
+        font-size: 3rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: white;
+        overflow: hidden;
+      }
+
+      #title {
+        position: fixed;
+        margin: auto;
+        width: 670px;
+        left: 26.2vw;
+        top: -5vh;
+        justify-content: center;
+        opacity: 0%;
+        margin-left: 0.1rem;
+        animation: fadeOut 6s;
+        
+      }
+      @keyframes fadeOut {
+        0% {opacity: 100%}
+        55% {opacity: 100%}
+        100% {opacity: 0%}
+      }
+
+      #barr {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      }
+
+      #itemBar {
+        height: auto;
+        width: 12%;
+        position: fixed;
+        right: 0;
+        bottom: 0.5vh;
+        z-index: 4;
+        background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(255, 255, 255),  rgb(0, 0, 0), rgb(255, 255, 255) 100%);
+        background-size: 400% 400%;
+        animation: animation 15s linear infinite;
+        height: 100vh;
+        display: none;
+}
+@keyframes animation {
+    0% {
+        background-position: 0% 0%
+    }
+    100% {
+        background-position: 0% 88%
+    }
+}
+    </style>
+  </head>
+  <body>
+    <!--
+     see the video tutorial for how this kind of thing works:
+     https://youtu.be/H3Fn33lYuE0
+      -->
+
+  <video class="floor" autoplay muted loop id="floor">
+    <source src="floor.mp4#t=10,400" type="video/mp4">
+  </video>
+  <audio id="collect" src="collect.wav" type="audio/wav"></audio>
+
+
+        <div class="map pixel-art">
+           <div class="character" facing="down" walking="true">
+              <div class="shadow pixel-art"></div>
+              <div class="character_spritesheet pixel-art"></div>
+           </div>
+
+        </div class="icon">
+
+          
+          <img class="miniletter" id= "mini" src="miniletter.png"></img>
+
+        </div>
+
+        <img class="paper" id="fullpaper" src="letter.png"></img>
+
+        <img id="scrap1" src ="Artifact1.png"></img>
+        <img id="scrap2" src ="Artifact2.png"></img>
+        <img id="scrap3" src ="Artifact3.png"></img>
+        <img id="scrap4" src ="Artifact4.png"></img>
+        <img id="scrap5" src ="Artifact5.png"></img>
+        <img id="scrap6" src ="Artifact6.png"></img>
+
+        <img id="title" src="title.png"></img>
+        
+        <div id="itemBar">
+          <div id="barr">
+          <img class="paper1" id= "paper1" src="Artifact1.png"></img>
+          <img class="paper2" id= "paper2" src="Artifact1.png"></img>
+          <img class="paper3" id= "paper3" src="Artifact2.png"></img>
+          <img class="paper4" id= "paper4" src="Artifact3.png"></img>
+          <img class="paper5" id= "paper5" src="Artifact4.png"></img>
+          <img class="paper6" id= "paper6" src="Artifact5.png"></img>
+          <img class="paper7" id= "paper7" src="Artifact6.png"></img>
+          </div>
+        </div>
+
+       
+
+
+  </body>
+</html>

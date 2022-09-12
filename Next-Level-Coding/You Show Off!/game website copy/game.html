@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="game.js"></script>
+
+    <style>
+    :root {
+       --pixel-size: 2px;
+       --grid-cell: calc( var(--pixel-size) * 16);
+       --bg: #000000;
+    }
+    @media( min-width: 700px ) {
+       :root {
+          --pixel-size: 3px;
+       }
+    }
+    @media( min-width: 1000px ) {
+       :root {
+          --pixel-size: 4px;
+       }
+    }
+    /* @media( min-width: 1000px ) {
+       :root {
+          --pixel-size: 5px;
+       }
+    } */
+
+    
+
+    html {
+      position: relative;
+    }
+
+    html, body {
+       height: 100%;
+    }
+
+    body {
+       background: var(--bg);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       position: absolute;
+       color: blue;
+    }
+
+      .floor {
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+  height: 100;
+  width: 100;
+  z-index: -1;
+  }
+
+
+    .pixel-art {
+       image-rendering: pixelated;
+    }
+
+    .character {
+       width: calc( var(--grid-cell)* 2 );
+       height: calc( var(--grid-cell)* 2 );
+       position: absolute;
+       top: 40%;
+       right: 70%;
+       overflow: hidden;
+    }
+
+    .shadow {
+       width: calc( var(--grid-cell)* 2 );
+       height: calc( var(--grid-cell)* 2 );
+       position: absolute;
+       left:0;
+       top:0;
+       background: url("https://assets.codepen.io/21542/DemoRpgCharacterShadow.png") no-repeat no-repeat;
+       background-size: 100%;
+    }
+
+    .character_spritesheet {
+       position: absolute;
+       background: url("robots5.png") no-repeat no-repeat;
+       background-size: 100%;
+       width: calc( var(--grid-cell)* 8 );
+       height: calc( var(--grid-cell)* 8 );
+    }
+
+    .character[facing="right"] .character_spritesheet {
+       background-position-y: calc( var(--pixel-size) * -32 );
+    }
+    .character[facing="up"] .character_spritesheet {
+       background-position-y: calc( var(--pixel-size) * -64 );
+    }
+    .character[facing="left"] .character_spritesheet {
+       background-position-y: calc( var(--pixel-size) * -96 );
+    }
+    .character[walking="true"] .character_spritesheet {
+       animation: walkAnimation 1s steps(4) infinite;
+    }
+
+    @keyframes walkAnimation {
+      from {
+        transform: translate3d(0%,0%,0);
+      }
+      to {
+        transform: translate3d(-100%,0%,0);
+      }
+    }
+
+    .icon {
+
+      position: absolute;
+      top: 40%;
+      left: 30%;
+    }
+
+    .paper1 {
+      position: absolute;
+      top: 55%;
+      right: 75%;
+      height: calc( var(--grid-cell)* 5 );
+      width: calc( var(--grid-cell)* 5 );
+      image-rendering: pixelated;
+      display: none;
+    }
+
+
+    .paper2 {
+      position: absolute;
+      top: 55%;
+      right: 75%;
+      height: calc( var(--grid-cell)* 5 );
+      width: calc( var(--grid-cell)* 5 );
+      image-rendering: pixelated;
+      display: none;
+    }
+
+    .paper3 {
+      position: absolute;
+      top: 55%;
+      right: 75%;
+      height: calc( var(--grid-cell)* 5 );
+      width: calc( var(--grid-cell)* 5 );
+      image-rendering: pixelated;
+      display: none;
+    }
+
+    .paper4 {
+      position: absolute;
+      top: 55%;
+      right: 75%;
+      height: calc( var(--grid-cell)* 5 );
+      width: calc( var(--grid-cell)* 5 );
+      image-rendering: pixelated;
+      display: none;
+    }
+
+    .paper5 {
+      position: absolute;
+      top: 55%;
+      right: 75%;
+      height: calc( var(--grid-cell)* 5 );
+      width: calc( var(--grid-cell)* 5 );
+      image-rendering: pixelated;
+      display: none;
+    }
+
+    .paper6 {
+      position: absolute;
+      top: 55%;
+      right: 75%;
+      height: calc( var(--grid-cell)* 5 );
+      width: calc( var(--grid-cell)* 5 );
+      image-rendering: pixelated;
+      display: none;
+    }
+
+    .paper7 {
+      position: absolute;
+      top: 55%;
+      right: 75%;
+      height: calc( var(--grid-cell)* 5 );
+      width: calc( var(--grid-cell)* 5 );
+      image-rendering: pixelated;
+      display: none;
+      cursor: pointer;
+    }
+
+    .paper {
+
+      position: fixed;
+      height: calc( var(--grid-cell)* 9 );
+      width: calc( var(--grid-cell)* 9 );
+      image-rendering: pixelated;
+      display: none;
+
+    }
+
+    #scrap1 {
+
+      position: fixed;
+      top: 20vh;
+      right: 14vh;
+      height: calc( var(--grid-cell)* 1);
+      width: calc( var(--grid-cell)* 1);
+      image-rendering: pixelated;
+      cursor: pointer;
+    }
+
+    #scrap2 {
+
+      position: fixed;
+      bottom: 10vh;
+      left: 74vh;
+      height: calc( var(--grid-cell)* 1);
+      width: calc( var(--grid-cell)* 1);
+      image-rendering: pixelated;
+      display: none;
+      cursor: pointer;
+    }
+
+    #scrap3 {
+
+      position: fixed;
+      top: 11vh;
+      left: 14vh;
+      height: calc( var(--grid-cell)* 1);
+      width: calc( var(--grid-cell)* 1);
+      image-rendering: pixelated;
+      display: none;
+      cursor: pointer;
+    }
+
+    #scrap4 {
+
+      position: fixed;
+      top: 32vh;
+      height: calc( var(--grid-cell)* 1);
+      width: calc( var(--grid-cell)* 1);
+      image-rendering: pixelated;
+      display: none;
+      cursor: pointer;
+    }
+
+    #scrap5 {
+
+      position: fixed;
+      bottom: 16vh;
+      right: 42vh;
+      height: calc( var(--grid-cell)* 1);
+      width: calc( var(--grid-cell)* 1);
+      image-rendering: pixelated;
+      display: none;
+      cursor: pointer;
+    }
+
+    #scrap6 {
+
+      position: fixed;
+      right: 43vh;
+      height: calc( var(--grid-cell)* 1);
+      width: calc( var(--grid-cell)* 1);
+      image-rendering: pixelated;
+      display: none;
+      cursor: pointer;
+    }
+
+    #container {
+
+      overflow: hidden;
+    }
+
+
+
+
+</style>
+</head>
+<body>
+  <div id="container">
+  <!--
+     see the video tutorial for how this kind of thing works:
+     https://youtu.be/H3Fn33lYuE0
+  -->
+
+  <video class="floor" autoplay muted loop id="floor">
+    <source src="floor.mp4" type="video/mp4">
+  </video>
+
+
+        <div class="map pixel-art">
+           <div class="character" facing="down" walking="true">
+              <div class="shadow pixel-art"></div>
+              <div class="character_spritesheet pixel-art"></div>
+           </div>
+
+        </div class="icon">
+
+          <img class="paper1" id= "paper1" src="paper1.png"></img>
+          <img class="paper2" id= "paper2" src="paper2.png"></img>
+          <img class="paper3" id= "paper3" src="paper3.png"></img>
+          <img class="paper4" id= "paper4" src="paper4.png"></img>
+          <img class="paper5" id= "paper5" src="paper5.png"></img>
+          <img class="paper6" id= "paper6" src="paper6.png"></img>
+          <img class="paper7" id= "paper7" src="paper7.png"></img>
+
+        </div>
+
+        <img class="paper" id="fullpaper" src="fullpaper.png"></img>
+
+        <img id="scrap1" src ="scrap.png"></img>
+        <img id="scrap2" src ="scrap.png"></img>
+        <img id="scrap3" src ="scrap.png"></img>
+        <img id="scrap4" src ="scrap.png"></img>
+        <img id="scrap5" src ="scrap.png"></img>
+        <img id="scrap6" src ="scrap.png"></img>
+      </div>
+  </body>
+</html>
