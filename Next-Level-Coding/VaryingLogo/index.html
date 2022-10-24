@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    
+    <style>
+
+    @font-face {
+        font-family: 'Baskerville';
+        src: url(/Baskerville-Regular.ttf);
+    }
+    @font-face {
+        font-family: 'BaskervilleItalic';
+        src: url(/baskervilleitalic.ttf);
+    }
+
+    .container {
+    display: grid;
+    grid-template-columns: 1fr, 1fr, 1fr;
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    }
+
+    .static {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    z-index: 0; 
+    font-size: 20vh;
+    color: #121c40;
+    line-height: 95%;
+        }
+
+    #logo {
+    position: relative;
+    display: flex;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    height: 20vw;
+    width: 20vw;
+    justify-self: center;
+    border: 2px transparent;
+    color:#121c40;
+    margin-right: 2vw;
+    }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="logo"></div>
+        <span class="static"> <span style="font-family: 'Baskerville'">MERICAN</span> <br><span style="font-family: 'BaskervilleItalic'">Affairs</span></span><br>
+    </div>
+
+</body>
+</html>
