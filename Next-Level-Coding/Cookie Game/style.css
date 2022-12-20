@@ -1,0 +1,155 @@
+#full {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    cursor: none;
+    filter: brightness(1.25); 
+}
+
+
+img{
+    position: absolute;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    z-index: 4;
+    cursor: none;
+}
+
+#angel1 {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    right: 15vw;
+    top: 15vh;
+}
+
+#angel2 {
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    left: 15vw;
+    top: 20vh;
+    z-index: 4;
+}
+
+#angel3 {
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    right: 15vw;
+    top: 20vh;
+    z-index: 4;
+}
+
+#bee {
+    display: none;
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    left: 10vw;
+    top: 60vh;
+}
+
+#beetle {
+    display: none;
+    position: fixed;
+    width: 150px;
+    height: 100px;
+    right: 17vw;
+    bottom: 15vh;
+
+}
+
+#butterfly3 {
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 200px;
+    transform: rotate(-20deg);
+    right: 30vw;
+    top: 1vh;
+    z-index: 1;
+
+}
+
+#butterfly4 {
+    display: none;
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    transform: rotate(30deg);
+    left: 5vw;
+    bottom: 40vh;
+    z-index: 1;
+
+}
+
+
+#dove {
+    display: none;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    transform: rotate(20deg);
+    bottom: 5vw;
+    left: 5vh;
+
+}
+
+#dove2 {
+    display: none;
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    transform: rotate(20deg);
+    top: 30vw;
+    right: 10vh;
+    transform: scaleX(-1);
+
+}
+
+#leaves {
+    display: none;
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+    top: 1vw;
+    left: 1vh;
+
+}
+
+#angelgirl {
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 350px;
+    top: 5vh;
+    left: 2vw;
+    z-index: 1;
+}
+
+#dolphin {
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 350px;
+    top: 5vh;
+    right: 2vw;
+    z-index: 1;
+}
+
+#flower {
+    display: none;
+    position: fixed;
+    width: 180px;
+    height: 360px;
+    bottom: 10vh;
+    right: 2vw;
+    transform: rotate(-60deg);
+}
+
