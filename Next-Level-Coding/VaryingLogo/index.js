@@ -13,8 +13,8 @@ const fetchAlphaVantage = async () => {
 	
 	// let timeSeries = [(response["Weekly Time Series"]['2022-07-08']['1. open']), (response["Weekly Time Series"]['2022-07-08']['4. close']), (response["Weekly Time Series"]['2022-07-15']['4. close']), (response["Weekly Time Series"]['2022-07-22']['4. close']), (response["Weekly Time Series"]['2022-07-29']['4. close']), (response["Weekly Time Series"]['2022-08-05']['4. close']), (response["Weekly Time Series"]['2022-08-12']['4. close']), (response["Weekly Time Series"]['2022-08-19']['4. close']), (response["Weekly Time Series"]['2022-08-26']['4. close']), (response["Weekly Time Series"]['2022-09-02']['4. close']), (response["Weekly Time Series"]['2022-09-09']['4. close']), (response["Weekly Time Series"]['2022-09-16']['4. close']), (response["Weekly Time Series"]['2022-09-23']['4. close'])];
 	console.log(timeSeries)	
-	let highestValue = parseInt(timeSeries[5]);
-	let lowestValue = parseInt(timeSeries[9]);
+	let highestValue = parseFloat(timeSeries[5]);
+	let lowestValue = parseFloat(timeSeries[9]);
 	let box = document.getElementById("logo");
 		
 		function map(value, low1, high1, low2, high2) {
