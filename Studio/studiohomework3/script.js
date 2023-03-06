@@ -3,21 +3,22 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
     Authorization: "Bearer keyb2D3la07kqf661",
   },
 })
-  .then((response) => response.json()) //take data in and process this in a js way
+  .then((res) => res.json()) //take data in and process this in a js way
   .then((data) => {
-    console.log(data);
+    // console.log(data);
 
     const logos = document.querySelector(".logos");
 
     //generate random line
 
-    console.log(data.records[0]);
+    console.log(data.records);
 
     let follow = document.getElementById("follow");
 
-    let randomNum = Math.round(Math.random() * (data.records.length - 1));
+    let randomNum = parseInt(Math.random() * (data.records.length - 1));
     let currentLogo = data.records[randomNum].fields;
-    follow.innerHTML = `<img src=${currentLogo.image[0].thumbnails.large.url}/>`;
+    follow.innerHTML = `<img src="${currentLogo.image[0].thumbnails.large.url}"/>`;
+    console.log(currentLogo);
 
     // let container = document.querySelector('.container');
     document.addEventListener("click", stamp);
@@ -26,8 +27,10 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
       // console.log("onClick", e.pageX);
       let x = e.pageX;
       let y = e.pageY;
-      document.body.innerHTML += `<div class="stamp" style="top: ${y}px; left: ${x}px">
-        <img src=${currentLogo.image[0].thumbnails.large.url}/> 
+      document.body.innerHTML += `<div class="stamp" style="top: ${
+        y + 100
+      }px; left: ${x + 250}px">
+        <img src="${currentLogo.image[0].thumbnails.large.url}"/> 
         </div>`;
 
       randomNum = Math.round(Math.random() * (data.records.length - 1));
@@ -35,7 +38,7 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
 
       follow = document.getElementById("follow");
       follow.style.opacity = 0;
-      follow.innerHTML = `<img src=${currentLogo.image[0].thumbnails.large.url}/>`;
+      follow.innerHTML = `<img src="${currentLogo.image[0].thumbnails.large.url}"/>`;
     }
     // load st
     data.records.sort((a, b) => {
@@ -50,7 +53,7 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
           <div class=row>
             <div class="a">${logo.fields.index}</div>
             <div class="b">${logo.fields.name}
-            <img class="image" style="vertical-align: middle; position: relative"  src=${logo.fields.image[0].thumbnails.large.url}></img>
+            <img class="image" style="vertical-align: middle; position: relative"  src="${logo.fields.image[0].thumbnails.large.url}"></img>
           </div>
             <div class=subrow>
                ${logo.fields.platform},    
@@ -72,8 +75,8 @@ fetch("https://api.airtable.com/v0/appzBaAAAT8ooTcVW/Video%20Game%20Logos", {
     function onMouseMove(e) {
       // console.log("mousemove", e.pageX);
       follow.style.opacity = 1;
-      follow.style.left = e.pageX + "px";
-      follow.style.top = e.pageY + "px";
+      follow.style.left = e.pageX + 250 + "px";
+      follow.style.top = e.pageY + 100 + "px";
     }
     document.addEventListener("mousemove", onMouseMove);
 
